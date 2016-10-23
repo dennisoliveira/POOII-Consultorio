@@ -60,6 +60,7 @@
             this.btnMedicos.Name = "btnMedicos";
             this.btnMedicos.Size = new System.Drawing.Size(109, 52);
             this.btnMedicos.Text = "Médicos";
+            this.btnMedicos.Click += new System.EventHandler(this.btnMedicos_Click);
             // 
             // btnPacientes
             // 
@@ -76,7 +77,7 @@
             this.btnConsultas.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnConsultas.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnConsultas.Name = "btnConsultas";
-            this.btnConsultas.Size = new System.Drawing.Size(111, 52);
+            this.btnConsultas.Size = new System.Drawing.Size(109, 52);
             this.btnConsultas.Text = "Consultas";
             // 
             // btnRelatorios
@@ -85,7 +86,7 @@
             this.btnRelatorios.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnRelatorios.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnRelatorios.Name = "btnRelatorios";
-            this.btnRelatorios.Size = new System.Drawing.Size(111, 52);
+            this.btnRelatorios.Size = new System.Drawing.Size(109, 52);
             this.btnRelatorios.Text = "Relatórios";
             // 
             // frmPrincipal

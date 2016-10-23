@@ -16,5 +16,33 @@ namespace Consultorio
         {
             InitializeComponent();
         }
+
+        // Criado fora do método para que o mesmo possa estar ativo na memória enquanto o form principal estiver aberto
+        frmMedicos objMedicos = new frmMedicos();
+
+        private void btnMedicos_Click(object sender, EventArgs e)
+        {
+            // Verificar se o objeto não está criado, se não estiver faço a criação
+            if (objMedicos.IsDisposed)
+            {
+                objMedicos = new frmMedicos();
+
+            }
+
+            // Informo que este form, o principal é o formulário pai do formulário médico
+            objMedicos.MdiParent = this;
+
+            // Verifico se o formulário já está aberto, se não estiver abro senão envio uma mensagem de alerta
+            if (objMedicos.Visible == false)
+            {
+                objMedicos.Show();
+            }
+            else
+            {
+                MessageBox.Show("O formulário médico já está aberto!",
+                    "Consultório Médico 1.0", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
+        }
     }
 }
