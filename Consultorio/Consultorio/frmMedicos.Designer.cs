@@ -29,32 +29,32 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMedicos));
             System.Windows.Forms.Label lblId;
             System.Windows.Forms.Label lblNome;
             System.Windows.Forms.Label lblCRM;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMedicos));
             this.consultorioDataSet = new Consultorio.ConsultorioDataSet();
             this.medicosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.medicosTableAdapter = new Consultorio.ConsultorioDataSetTableAdapters.MedicosTableAdapter();
             this.tableAdapterManager = new Consultorio.ConsultorioDataSetTableAdapters.TableAdapterManager();
             this.medicosBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.medicosBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnFechar = new System.Windows.Forms.ToolStripButton();
             this.idLabel1 = new System.Windows.Forms.Label();
             this.nomeTextBox = new System.Windows.Forms.TextBox();
             this.cRMMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.btnFechar = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             lblId = new System.Windows.Forms.Label();
             lblNome = new System.Windows.Forms.Label();
             lblCRM = new System.Windows.Forms.Label();
@@ -63,6 +63,33 @@
             ((System.ComponentModel.ISupportInitialize)(this.medicosBindingNavigator)).BeginInit();
             this.medicosBindingNavigator.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // lblId
+            // 
+            lblId.AutoSize = true;
+            lblId.Location = new System.Drawing.Point(12, 52);
+            lblId.Name = "lblId";
+            lblId.Size = new System.Drawing.Size(40, 13);
+            lblId.TabIndex = 1;
+            lblId.Text = "Código";
+            // 
+            // lblNome
+            // 
+            lblNome.AutoSize = true;
+            lblNome.Location = new System.Drawing.Point(12, 88);
+            lblNome.Name = "lblNome";
+            lblNome.Size = new System.Drawing.Size(35, 13);
+            lblNome.TabIndex = 3;
+            lblNome.Text = "Nome";
+            // 
+            // lblCRM
+            // 
+            lblCRM.AutoSize = true;
+            lblCRM.Location = new System.Drawing.Point(12, 124);
+            lblCRM.Name = "lblCRM";
+            lblCRM.Size = new System.Drawing.Size(34, 13);
+            lblCRM.TabIndex = 5;
+            lblCRM.Text = "CRM:";
             // 
             // consultorioDataSet
             // 
@@ -119,6 +146,29 @@
             this.medicosBindingNavigator.TabIndex = 0;
             this.medicosBindingNavigator.Text = "bindingNavigator1";
             // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(78, 22);
+            this.bindingNavigatorAddNewItem.Text = "Adicionar";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
+            this.bindingNavigatorCountItem.Text = "de {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(61, 22);
+            this.bindingNavigatorDeleteItem.Text = "Excluir";
+            // 
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -151,16 +201,9 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
-            this.bindingNavigatorCountItem.Text = "de {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
@@ -183,24 +226,8 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(78, 22);
-            this.bindingNavigatorAddNewItem.Text = "Adicionar";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(61, 22);
-            this.bindingNavigatorDeleteItem.Text = "Excluir";
             // 
             // medicosBindingNavigatorSaveItem
             // 
@@ -210,14 +237,20 @@
             this.medicosBindingNavigatorSaveItem.Text = "Salvar";
             this.medicosBindingNavigatorSaveItem.Click += new System.EventHandler(this.medicosBindingNavigatorSaveItem_Click);
             // 
-            // lblId
+            // toolStripSeparator1
             // 
-            lblId.AutoSize = true;
-            lblId.Location = new System.Drawing.Point(12, 52);
-            lblId.Name = "lblId";
-            lblId.Size = new System.Drawing.Size(40, 13);
-            lblId.TabIndex = 1;
-            lblId.Text = "Código";
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // btnFechar
+            // 
+            this.btnFechar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnFechar.Image = ((System.Drawing.Image)(resources.GetObject("btnFechar.Image")));
+            this.btnFechar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Size = new System.Drawing.Size(46, 22);
+            this.btnFechar.Text = "Fechar";
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
             // idLabel1
             // 
@@ -228,15 +261,6 @@
             this.idLabel1.TabIndex = 2;
             this.idLabel1.Text = "label1";
             // 
-            // lblNome
-            // 
-            lblNome.AutoSize = true;
-            lblNome.Location = new System.Drawing.Point(12, 88);
-            lblNome.Name = "lblNome";
-            lblNome.Size = new System.Drawing.Size(35, 13);
-            lblNome.TabIndex = 3;
-            lblNome.Text = "Nome";
-            // 
             // nomeTextBox
             // 
             this.nomeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.medicosBindingSource, "Nome", true));
@@ -244,15 +268,6 @@
             this.nomeTextBox.Name = "nomeTextBox";
             this.nomeTextBox.Size = new System.Drawing.Size(227, 20);
             this.nomeTextBox.TabIndex = 1;
-            // 
-            // lblCRM
-            // 
-            lblCRM.AutoSize = true;
-            lblCRM.Location = new System.Drawing.Point(12, 124);
-            lblCRM.Name = "lblCRM";
-            lblCRM.Size = new System.Drawing.Size(34, 13);
-            lblCRM.TabIndex = 5;
-            lblCRM.Text = "CRM:";
             // 
             // cRMMaskedTextBox
             // 
@@ -262,21 +277,6 @@
             this.cRMMaskedTextBox.Name = "cRMMaskedTextBox";
             this.cRMMaskedTextBox.Size = new System.Drawing.Size(113, 20);
             this.cRMMaskedTextBox.TabIndex = 2;
-            // 
-            // btnFechar
-            // 
-            this.btnFechar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.btnFechar.Image = ((System.Drawing.Image)(resources.GetObject("btnFechar.Image")));
-            this.btnFechar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Size = new System.Drawing.Size(46, 19);
-            this.btnFechar.Text = "Fechar";
-            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // frmMedicos
             // 
@@ -299,6 +299,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Médico";
             this.Load += new System.EventHandler(this.frmMedicos_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmMedicos_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.consultorioDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.medicosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.medicosBindingNavigator)).EndInit();

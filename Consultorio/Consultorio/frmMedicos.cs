@@ -41,5 +41,13 @@ namespace Consultorio
         {
             this.Close();
         }
+
+        private void frmMedicos_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+        }
     }
 }
