@@ -44,5 +44,27 @@ namespace Consultorio
             }
 
         }
+
+        frmPacientes objPacientes = new frmPacientes();
+
+        private void btnPacientes_Click(object sender, EventArgs e)
+        {
+            if(objPacientes.IsDisposed)
+            {
+                objPacientes = new frmPacientes();
+            }
+
+            objPacientes.MdiParent = this;
+
+            if(objPacientes.Visible == false)
+            {
+                objPacientes.Show();
+            }
+            else
+            {
+                MessageBox.Show("O formulário Paciente já está aberto",
+                    "Consultório Médico 1.0", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
     }
 }

@@ -813,7 +813,7 @@ namespace Consultorio {
                 this.columnId.ReadOnly = true;
                 this.columnId.Unique = true;
                 this.columnNome.MaxLength = 50;
-                this.columnTelefone.MaxLength = 10;
+                this.columnTelefone.MaxLength = 20;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

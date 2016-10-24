@@ -70,6 +70,7 @@
             this.btnPacientes.Name = "btnPacientes";
             this.btnPacientes.Size = new System.Drawing.Size(109, 52);
             this.btnPacientes.Text = "Pacientes";
+            this.btnPacientes.Click += new System.EventHandler(this.btnPacientes_Click);
             // 
             // btnConsultas
             // 
