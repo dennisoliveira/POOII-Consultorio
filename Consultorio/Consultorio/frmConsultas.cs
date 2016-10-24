@@ -35,5 +35,18 @@ namespace Consultorio
             this.consultasTableAdapter.Fill(this.consultorioDataSet.Consultas);
 
         }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void frmConsultas_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+        }
     }
 }

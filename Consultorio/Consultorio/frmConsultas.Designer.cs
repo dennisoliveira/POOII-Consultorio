@@ -29,49 +29,51 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConsultas));
             System.Windows.Forms.Label lblIdConsulta;
             System.Windows.Forms.Label lblIdMedico;
             System.Windows.Forms.Label lblidPaciente;
             System.Windows.Forms.Label lblDataConsulta;
             System.Windows.Forms.Label lblHoraIn;
             System.Windows.Forms.Label horaFimLabel;
-            System.Windows.Forms.Label observacoesLabel;
+            System.Windows.Forms.Label lblObs;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConsultas));
             this.consultorioDataSet = new Consultorio.ConsultorioDataSet();
             this.consultasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.consultasTableAdapter = new Consultorio.ConsultorioDataSetTableAdapters.ConsultasTableAdapter();
             this.tableAdapterManager = new Consultorio.ConsultorioDataSetTableAdapters.TableAdapterManager();
+            this.medicosTableAdapter = new Consultorio.ConsultorioDataSetTableAdapters.MedicosTableAdapter();
+            this.pacientesTableAdapter = new Consultorio.ConsultorioDataSetTableAdapters.PacientesTableAdapter();
             this.consultasBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.consultasBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.idLabel1 = new System.Windows.Forms.Label();
             this.cboMedico = new System.Windows.Forms.ComboBox();
+            this.medicosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cboPaciente = new System.Windows.Forms.ComboBox();
+            this.pacientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dtData = new System.Windows.Forms.DateTimePicker();
             this.dtHoraIn = new System.Windows.Forms.DateTimePicker();
-            this.horaFimDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.observacoesTextBox = new System.Windows.Forms.TextBox();
-            this.medicosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.medicosTableAdapter = new Consultorio.ConsultorioDataSetTableAdapters.MedicosTableAdapter();
-            this.pacientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pacientesTableAdapter = new Consultorio.ConsultorioDataSetTableAdapters.PacientesTableAdapter();
+            this.dtHoraFim = new System.Windows.Forms.DateTimePicker();
+            this.txtObs = new System.Windows.Forms.TextBox();
+            this.btnFechar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             lblIdConsulta = new System.Windows.Forms.Label();
             lblIdMedico = new System.Windows.Forms.Label();
             lblidPaciente = new System.Windows.Forms.Label();
             lblDataConsulta = new System.Windows.Forms.Label();
             lblHoraIn = new System.Windows.Forms.Label();
             horaFimLabel = new System.Windows.Forms.Label();
-            observacoesLabel = new System.Windows.Forms.Label();
+            lblObs = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.consultorioDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.consultasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.consultasBindingNavigator)).BeginInit();
@@ -79,6 +81,76 @@
             ((System.ComponentModel.ISupportInitialize)(this.medicosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pacientesBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // lblIdConsulta
+            // 
+            lblIdConsulta.AutoSize = true;
+            lblIdConsulta.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lblIdConsulta.Location = new System.Drawing.Point(12, 37);
+            lblIdConsulta.Name = "lblIdConsulta";
+            lblIdConsulta.Size = new System.Drawing.Size(54, 17);
+            lblIdConsulta.TabIndex = 1;
+            lblIdConsulta.Text = "Código";
+            // 
+            // lblIdMedico
+            // 
+            lblIdMedico.AutoSize = true;
+            lblIdMedico.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lblIdMedico.Location = new System.Drawing.Point(12, 71);
+            lblIdMedico.Name = "lblIdMedico";
+            lblIdMedico.Size = new System.Drawing.Size(117, 17);
+            lblIdMedico.TabIndex = 3;
+            lblIdMedico.Text = "Nome do Médico";
+            // 
+            // lblidPaciente
+            // 
+            lblidPaciente.AutoSize = true;
+            lblidPaciente.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lblidPaciente.Location = new System.Drawing.Point(12, 105);
+            lblidPaciente.Name = "lblidPaciente";
+            lblidPaciente.Size = new System.Drawing.Size(128, 17);
+            lblidPaciente.TabIndex = 5;
+            lblidPaciente.Text = "Nome do Paciente";
+            // 
+            // lblDataConsulta
+            // 
+            lblDataConsulta.AutoSize = true;
+            lblDataConsulta.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lblDataConsulta.Location = new System.Drawing.Point(12, 139);
+            lblDataConsulta.Name = "lblDataConsulta";
+            lblDataConsulta.Size = new System.Drawing.Size(101, 17);
+            lblDataConsulta.TabIndex = 7;
+            lblDataConsulta.Text = "Data Consulta";
+            // 
+            // lblHoraIn
+            // 
+            lblHoraIn.AutoSize = true;
+            lblHoraIn.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lblHoraIn.Location = new System.Drawing.Point(12, 170);
+            lblHoraIn.Name = "lblHoraIn";
+            lblHoraIn.Size = new System.Drawing.Size(80, 17);
+            lblHoraIn.TabIndex = 9;
+            lblHoraIn.Text = "Hora Inicio:";
+            // 
+            // horaFimLabel
+            // 
+            horaFimLabel.AutoSize = true;
+            horaFimLabel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            horaFimLabel.Location = new System.Drawing.Point(12, 200);
+            horaFimLabel.Name = "horaFimLabel";
+            horaFimLabel.Size = new System.Drawing.Size(74, 17);
+            horaFimLabel.TabIndex = 11;
+            horaFimLabel.Text = "Hora Final";
+            // 
+            // lblObs
+            // 
+            lblObs.AutoSize = true;
+            lblObs.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lblObs.Location = new System.Drawing.Point(12, 231);
+            lblObs.Name = "lblObs";
+            lblObs.Size = new System.Drawing.Size(96, 17);
+            lblObs.TabIndex = 13;
+            lblObs.Text = "Observações";
             // 
             // consultorioDataSet
             // 
@@ -102,11 +174,20 @@
             this.tableAdapterManager.PacientesTableAdapter = this.pacientesTableAdapter;
             this.tableAdapterManager.UpdateOrder = Consultorio.ConsultorioDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // medicosTableAdapter
+            // 
+            this.medicosTableAdapter.ClearBeforeFill = true;
+            // 
+            // pacientesTableAdapter
+            // 
+            this.pacientesTableAdapter.ClearBeforeFill = true;
+            // 
             // consultasBindingNavigator
             // 
             this.consultasBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
             this.consultasBindingNavigator.BindingSource = this.consultasBindingSource;
             this.consultasBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.consultasBindingNavigator.CountItemFormat = "de {0}";
             this.consultasBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
             this.consultasBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
@@ -120,7 +201,9 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
-            this.consultasBindingNavigatorSaveItem});
+            this.consultasBindingNavigatorSaveItem,
+            this.toolStripSeparator1,
+            this.btnFechar});
             this.consultasBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.consultasBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.consultasBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -131,6 +214,29 @@
             this.consultasBindingNavigator.Size = new System.Drawing.Size(474, 25);
             this.consultasBindingNavigator.TabIndex = 0;
             this.consultasBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(78, 22);
+            this.bindingNavigatorAddNewItem.Text = "Adicionar";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
+            this.bindingNavigatorCountItem.Text = "de {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(61, 22);
+            this.bindingNavigatorDeleteItem.Text = "Excluir";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -164,16 +270,9 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
@@ -196,45 +295,16 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // consultasBindingNavigatorSaveItem
             // 
-            this.consultasBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.consultasBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("consultasBindingNavigatorSaveItem.Image")));
             this.consultasBindingNavigatorSaveItem.Name = "consultasBindingNavigatorSaveItem";
-            this.consultasBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
-            this.consultasBindingNavigatorSaveItem.Text = "Save Data";
+            this.consultasBindingNavigatorSaveItem.Size = new System.Drawing.Size(58, 22);
+            this.consultasBindingNavigatorSaveItem.Text = "Salvar";
             this.consultasBindingNavigatorSaveItem.Click += new System.EventHandler(this.consultasBindingNavigatorSaveItem_Click);
-            // 
-            // lblIdConsulta
-            // 
-            lblIdConsulta.AutoSize = true;
-            lblIdConsulta.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lblIdConsulta.Location = new System.Drawing.Point(12, 37);
-            lblIdConsulta.Name = "lblIdConsulta";
-            lblIdConsulta.Size = new System.Drawing.Size(54, 17);
-            lblIdConsulta.TabIndex = 1;
-            lblIdConsulta.Text = "Código";
             // 
             // idLabel1
             // 
@@ -245,16 +315,6 @@
             this.idLabel1.Size = new System.Drawing.Size(150, 23);
             this.idLabel1.TabIndex = 2;
             this.idLabel1.Text = "label1";
-            // 
-            // lblIdMedico
-            // 
-            lblIdMedico.AutoSize = true;
-            lblIdMedico.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lblIdMedico.Location = new System.Drawing.Point(12, 71);
-            lblIdMedico.Name = "lblIdMedico";
-            lblIdMedico.Size = new System.Drawing.Size(117, 17);
-            lblIdMedico.TabIndex = 3;
-            lblIdMedico.Text = "Nome do Médico";
             // 
             // cboMedico
             // 
@@ -269,15 +329,10 @@
             this.cboMedico.TabIndex = 1;
             this.cboMedico.ValueMember = "Id";
             // 
-            // lblidPaciente
+            // medicosBindingSource
             // 
-            lblidPaciente.AutoSize = true;
-            lblidPaciente.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lblidPaciente.Location = new System.Drawing.Point(12, 105);
-            lblidPaciente.Name = "lblidPaciente";
-            lblidPaciente.Size = new System.Drawing.Size(128, 17);
-            lblidPaciente.TabIndex = 5;
-            lblidPaciente.Text = "Nome do Paciente";
+            this.medicosBindingSource.DataMember = "Medicos";
+            this.medicosBindingSource.DataSource = this.consultorioDataSet;
             // 
             // cboPaciente
             // 
@@ -292,15 +347,10 @@
             this.cboPaciente.TabIndex = 2;
             this.cboPaciente.ValueMember = "Id";
             // 
-            // lblDataConsulta
+            // pacientesBindingSource
             // 
-            lblDataConsulta.AutoSize = true;
-            lblDataConsulta.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lblDataConsulta.Location = new System.Drawing.Point(12, 139);
-            lblDataConsulta.Name = "lblDataConsulta";
-            lblDataConsulta.Size = new System.Drawing.Size(101, 17);
-            lblDataConsulta.TabIndex = 7;
-            lblDataConsulta.Text = "Data Consulta";
+            this.pacientesBindingSource.DataMember = "Pacientes";
+            this.pacientesBindingSource.DataSource = this.consultorioDataSet;
             // 
             // dtData
             // 
@@ -313,16 +363,6 @@
             this.dtData.Size = new System.Drawing.Size(104, 20);
             this.dtData.TabIndex = 3;
             // 
-            // lblHoraIn
-            // 
-            lblHoraIn.AutoSize = true;
-            lblHoraIn.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lblHoraIn.Location = new System.Drawing.Point(12, 170);
-            lblHoraIn.Name = "lblHoraIn";
-            lblHoraIn.Size = new System.Drawing.Size(80, 17);
-            lblHoraIn.TabIndex = 9;
-            lblHoraIn.Text = "Hora Inicio:";
-            // 
             // dtHoraIn
             // 
             this.dtHoraIn.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.consultasBindingSource, "HoraInicio", true));
@@ -332,59 +372,42 @@
             this.dtHoraIn.Name = "dtHoraIn";
             this.dtHoraIn.ShowUpDown = true;
             this.dtHoraIn.Size = new System.Drawing.Size(104, 20);
-            this.dtHoraIn.TabIndex = 10;
+            this.dtHoraIn.TabIndex = 4;
             // 
-            // horaFimLabel
+            // dtHoraFim
             // 
-            horaFimLabel.AutoSize = true;
-            horaFimLabel.Location = new System.Drawing.Point(17, 203);
-            horaFimLabel.Name = "horaFimLabel";
-            horaFimLabel.Size = new System.Drawing.Size(52, 13);
-            horaFimLabel.TabIndex = 11;
-            horaFimLabel.Text = "Hora Fim:";
+            this.dtHoraFim.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.consultasBindingSource, "HoraFim", true));
+            this.dtHoraFim.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.consultasBindingSource, "HoraFim", true));
+            this.dtHoraFim.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtHoraFim.Location = new System.Drawing.Point(146, 200);
+            this.dtHoraFim.Name = "dtHoraFim";
+            this.dtHoraFim.ShowUpDown = true;
+            this.dtHoraFim.Size = new System.Drawing.Size(104, 20);
+            this.dtHoraFim.TabIndex = 5;
             // 
-            // horaFimDateTimePicker
+            // txtObs
             // 
-            this.horaFimDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.consultasBindingSource, "HoraFim", true));
-            this.horaFimDateTimePicker.Location = new System.Drawing.Point(146, 196);
-            this.horaFimDateTimePicker.Name = "horaFimDateTimePicker";
-            this.horaFimDateTimePicker.Size = new System.Drawing.Size(200, 20);
-            this.horaFimDateTimePicker.TabIndex = 12;
+            this.txtObs.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.consultasBindingSource, "Observacoes", true));
+            this.txtObs.Location = new System.Drawing.Point(146, 231);
+            this.txtObs.Multiline = true;
+            this.txtObs.Name = "txtObs";
+            this.txtObs.Size = new System.Drawing.Size(306, 48);
+            this.txtObs.TabIndex = 6;
             // 
-            // observacoesLabel
+            // btnFechar
             // 
-            observacoesLabel.AutoSize = true;
-            observacoesLabel.Location = new System.Drawing.Point(17, 228);
-            observacoesLabel.Name = "observacoesLabel";
-            observacoesLabel.Size = new System.Drawing.Size(73, 13);
-            observacoesLabel.TabIndex = 13;
-            observacoesLabel.Text = "Observacoes:";
+            this.btnFechar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnFechar.Image = ((System.Drawing.Image)(resources.GetObject("btnFechar.Image")));
+            this.btnFechar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Size = new System.Drawing.Size(46, 19);
+            this.btnFechar.Text = "Fechar";
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
-            // observacoesTextBox
+            // toolStripSeparator1
             // 
-            this.observacoesTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.consultasBindingSource, "Observacoes", true));
-            this.observacoesTextBox.Location = new System.Drawing.Point(146, 222);
-            this.observacoesTextBox.Name = "observacoesTextBox";
-            this.observacoesTextBox.Size = new System.Drawing.Size(200, 20);
-            this.observacoesTextBox.TabIndex = 14;
-            // 
-            // medicosBindingSource
-            // 
-            this.medicosBindingSource.DataMember = "Medicos";
-            this.medicosBindingSource.DataSource = this.consultorioDataSet;
-            // 
-            // medicosTableAdapter
-            // 
-            this.medicosTableAdapter.ClearBeforeFill = true;
-            // 
-            // pacientesBindingSource
-            // 
-            this.pacientesBindingSource.DataMember = "Pacientes";
-            this.pacientesBindingSource.DataSource = this.consultorioDataSet;
-            // 
-            // pacientesTableAdapter
-            // 
-            this.pacientesTableAdapter.ClearBeforeFill = true;
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // frmConsultas
             // 
@@ -403,9 +426,9 @@
             this.Controls.Add(lblHoraIn);
             this.Controls.Add(this.dtHoraIn);
             this.Controls.Add(horaFimLabel);
-            this.Controls.Add(this.horaFimDateTimePicker);
-            this.Controls.Add(observacoesLabel);
-            this.Controls.Add(this.observacoesTextBox);
+            this.Controls.Add(this.dtHoraFim);
+            this.Controls.Add(lblObs);
+            this.Controls.Add(this.txtObs);
             this.Controls.Add(this.consultasBindingNavigator);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.KeyPreview = true;
@@ -415,6 +438,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Consultas";
             this.Load += new System.EventHandler(this.frmConsultas_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmConsultas_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.consultorioDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.consultasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.consultasBindingNavigator)).EndInit();
@@ -451,11 +475,13 @@
         private System.Windows.Forms.ComboBox cboPaciente;
         private System.Windows.Forms.DateTimePicker dtData;
         private System.Windows.Forms.DateTimePicker dtHoraIn;
-        private System.Windows.Forms.DateTimePicker horaFimDateTimePicker;
-        private System.Windows.Forms.TextBox observacoesTextBox;
+        private System.Windows.Forms.DateTimePicker dtHoraFim;
+        private System.Windows.Forms.TextBox txtObs;
         private ConsultorioDataSetTableAdapters.MedicosTableAdapter medicosTableAdapter;
         private System.Windows.Forms.BindingSource medicosBindingSource;
         private ConsultorioDataSetTableAdapters.PacientesTableAdapter pacientesTableAdapter;
         private System.Windows.Forms.BindingSource pacientesBindingSource;
+        private System.Windows.Forms.ToolStripButton btnFechar;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }

@@ -80,6 +80,7 @@
             this.btnConsultas.Name = "btnConsultas";
             this.btnConsultas.Size = new System.Drawing.Size(109, 52);
             this.btnConsultas.Text = "Consultas";
+            this.btnConsultas.Click += new System.EventHandler(this.btnConsultas_Click);
             // 
             // btnRelatorios
             // 

@@ -66,5 +66,27 @@ namespace Consultorio
                     "Consultório Médico 1.0", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
+
+        frmConsultas objConsultas = new frmConsultas();
+
+        private void btnConsultas_Click(object sender, EventArgs e)
+        {
+            if(objConsultas.IsDisposed)
+            {
+                objConsultas = new frmConsultas();
+            }
+
+            objConsultas.MdiParent = this;
+
+            if(objConsultas.Visible == false)
+            {
+                objConsultas.Show();
+            }
+            else
+            {
+                MessageBox.Show("O Formulário Consultas já está aberto!",
+                    "Consultório Médico 1.0", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
     }
 }
