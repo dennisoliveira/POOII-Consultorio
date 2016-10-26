@@ -56,6 +56,8 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.consultasBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnFechar = new System.Windows.Forms.ToolStripButton();
             this.idLabel1 = new System.Windows.Forms.Label();
             this.cboMedico = new System.Windows.Forms.ComboBox();
             this.medicosBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -65,8 +67,7 @@
             this.dtHoraIn = new System.Windows.Forms.DateTimePicker();
             this.dtHoraFim = new System.Windows.Forms.DateTimePicker();
             this.txtObs = new System.Windows.Forms.TextBox();
-            this.btnFechar = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.epErro = new System.Windows.Forms.ErrorProvider(this.components);
             lblIdConsulta = new System.Windows.Forms.Label();
             lblIdMedico = new System.Windows.Forms.Label();
             lblidPaciente = new System.Windows.Forms.Label();
@@ -80,6 +81,7 @@
             this.consultasBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.medicosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pacientesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epErro)).BeginInit();
             this.SuspendLayout();
             // 
             // lblIdConsulta
@@ -306,6 +308,21 @@
             this.consultasBindingNavigatorSaveItem.Text = "Salvar";
             this.consultasBindingNavigatorSaveItem.Click += new System.EventHandler(this.consultasBindingNavigatorSaveItem_Click);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // btnFechar
+            // 
+            this.btnFechar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnFechar.Image = ((System.Drawing.Image)(resources.GetObject("btnFechar.Image")));
+            this.btnFechar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Size = new System.Drawing.Size(46, 22);
+            this.btnFechar.Text = "Fechar";
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
+            // 
             // idLabel1
             // 
             this.idLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.consultasBindingSource, "Id", true));
@@ -394,20 +411,10 @@
             this.txtObs.Size = new System.Drawing.Size(306, 48);
             this.txtObs.TabIndex = 6;
             // 
-            // btnFechar
+            // epErro
             // 
-            this.btnFechar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.btnFechar.Image = ((System.Drawing.Image)(resources.GetObject("btnFechar.Image")));
-            this.btnFechar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Size = new System.Drawing.Size(46, 19);
-            this.btnFechar.Text = "Fechar";
-            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.epErro.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epErro.ContainerControl = this;
             // 
             // frmConsultas
             // 
@@ -446,6 +453,7 @@
             this.consultasBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.medicosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pacientesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epErro)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -483,5 +491,6 @@
         private System.Windows.Forms.BindingSource pacientesBindingSource;
         private System.Windows.Forms.ToolStripButton btnFechar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ErrorProvider epErro;
     }
 }

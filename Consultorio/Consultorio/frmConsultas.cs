@@ -19,9 +19,40 @@ namespace Consultorio
 
         private void consultasBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.consultasBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.consultorioDataSet);
+            // Variável do tipo boleano inicia com false
+            bool valida = false;
+
+            // Se o valor de cboMedico for fazio então mostre a mensagem Campo Obrigatório
+            // e torna o valor da variável true. Senão não mostre a mensagem
+            if(cboMedico.Text == "")
+            {
+                epErro.SetError(cboMedico, "Campo obrigatório");
+                valida = true;
+            }
+            else
+            {
+                epErro.SetError(cboMedico, null);
+            }
+
+            // Se o valor de cboPaciente for vazio então mostre a mensagem Campo Obrigatório
+            // e torna o valor da variável true. Senão não mostre a mensagem
+
+            if(cboPaciente.Text == "")
+            {
+                epErro.SetError(cboPaciente, "Campo obrigatório");
+                valida = true;
+            }
+            else
+            {
+                epErro.SetError(cboPaciente, null);
+            }
+
+            if(valida != true)
+            {
+                this.Validate();
+                this.consultasBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.consultorioDataSet);
+            }
 
         }
 
