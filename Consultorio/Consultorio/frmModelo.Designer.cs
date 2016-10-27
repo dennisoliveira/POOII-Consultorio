@@ -34,8 +34,8 @@
             this.btnSalvar = new System.Windows.Forms.ToolStripButton();
             this.btnExcluir = new System.Windows.Forms.ToolStripButton();
             this.btnLocalizar = new System.Windows.Forms.ToolStripButton();
-            this.btnFechar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnFechar = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblMensagem = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1.SuspendLayout();
@@ -97,6 +97,11 @@
             this.btnLocalizar.Text = "Localizar";
             this.btnLocalizar.Click += new System.EventHandler(this.btnLocalizar_Click);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 55);
+            // 
             // btnFechar
             // 
             this.btnFechar.Image = ((System.Drawing.Image)(resources.GetObject("btnFechar.Image")));
@@ -106,11 +111,6 @@
             this.btnFechar.Size = new System.Drawing.Size(94, 52);
             this.btnFechar.Text = "Fechar";
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 55);
             // 
             // statusStrip1
             // 
